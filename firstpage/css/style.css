@@ -1,0 +1,579 @@
+@charset "utf-8"
+/*
+ * Page name
+ * Copyright 2023
+ * Author
+ * Lincensed
+ */
+
+/* -------------------------- *\
+   Content
+\* -------------------------- */
+/**
+ * Content .............. You are reading it!
+ * Globel .............. Set common styles
+ * Layout .............. Set grid styles
+ * Component ............ Set component styles
+ * /
+
+/* -------------------------- *\
+   Globel
+\* -------------------------- */
+/**/
+*
+{
+	box-sizing: border-box; /*盒模型初始全域設定*/
+	position: relative; /*找上一個結構當參考點*/
+}
+html,body
+{
+	font-family: '微軟正黑體', arial;
+}
+h1,h2,h3,h4,h5,h6,p
+{
+	margin: 0;
+}
+ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a
+{
+	text-decoration: none; /*去除超連結底線*/
+	color: #333;
+}
+/* -------------------------- *\
+   Layout
+\* -------------------------- */
+.container
+{
+	width: 1200px;
+	height: auto;
+	margin: 0 auto; /*置中*/
+	padding-left: 16px;
+	padding-right: 16px;
+	/*border: 1px solid #333;*/
+}
+.row
+{
+	height: auto;
+	/*border: 1px solid blue;*/
+	margin-left: -16px;
+	margin-right: -16px;
+}
+.row:after  /*清除浮動*/
+{
+	content: '';
+	display: block;
+	clear: both;
+}
+.col-1-2
+{
+	width: 50%;
+	float: left;
+}
+.col-1-3
+{
+	width: 33.333333%;
+	float: left;
+}
+.col-1-4
+{
+	width: 25%;
+	float: left;
+}
+
+/* -------------------------- *\
+   Component
+\* -------------------------- */
+/* btn */
+.btn
+{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 4px 16px;
+	border: 1px solid #fff;
+	color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+	transition: all 0.3s;
+}
+/* 主要的按鈕 */
+.btn.btn-primary
+{
+	background-color: #FE8900;
+	border: 1px solid #FE8900;
+	color: #fff;
+}
+.btn.btn-primary:hover
+{
+	background-color: #FF4C00;
+	border: 1px solid #CF3E00;
+}
+
+/* 次要的按鈕 */
+.btn.btn-secondary
+{
+	border: 1px solid #FE8900;
+	color: #FE8900;
+}
+.btn.btn-secondary:hover
+{
+	background-color: #FE8900;
+	border: 1px solid #FE8900;
+	color: #fff;
+}
+
+/*大小的設定*/
+.btn.btn-lg
+{
+	padding: 8px 32px;
+}
+.btn-group-center
+{
+	/*border: 1px solid #fff;*/
+	text-align: center;
+}
+.btn-group-center .btn
+{
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+/* image container */
+.image-container
+{
+	width: 100%;
+	/*border: 1px solid #000;*/
+	position: relative;
+
+}
+.image-container:before
+{
+	content: '';
+	display: block;
+	width: 100%;
+	padding-top: 75%;
+}
+.image-container .image
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 16px;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+/* mask-dark */
+/*.mask-dark
+{
+	background-color: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin-top: 64px;
+}*/
+
+/* hero */
+.hero
+{
+	padding-top: 120px;
+	padding-bottom: 120px;
+	/*border: 1px solid #000;*/
+}
+.hero.hero-bg-white
+{
+	background-color: #fefefe;
+}
+.hero.hero-bg-grey
+{
+	background-color: #262626;
+}
+
+/*nevbar*/
+.navbar
+{
+	/*border: 1px solid #000;*/
+	height: 64px;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed; /*脫離原本設定的值*/
+	z-index: 999; /*層級提升*/
+	width: 100%; /*用視窗做為參考值*/
+	left: 0;
+	top: 0;
+}
+.navbar .brand
+{
+	display: inline-block; /*屬性和vertical-align*/
+	vertical-align: top;  /*強制向上對齊*/
+	/*border: 1px solid #000;*/
+	width: 160px;
+	height: 64px;
+	background-image: url('../images/common/logo-w.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	/*color: #fff;*/
+	white-space: nowrap; /* 文字不要換行 */
+	text-indent: 100%; /* 文字縮格 */
+	overflow: hidden; /* 超出隱藏 */
+}
+.navbar .brand:hover
+{
+	background-image: url('../images/common/logo-o.svg');
+	transition: all 0.3s;
+}
+
+.navbar .nav
+{
+	float: right;
+}
+.navbar .nav .nav-item
+{
+	float: left;
+}
+.navbar .nav .nav-link
+{
+	/*border: 1px solid #fff;*/
+	color: #fff;
+	display: block;
+	line-height: 24px;
+	padding: 20px 16px;
+	transition: color 0.3s;
+}
+.navbar .nav .nav-link:hover
+{
+	color: #FF4C00;
+}
+
+/* jumbotron */
+.jumbotron
+{
+	/*border: 1px solid #000;*/
+	padding-top: 224px;
+	padding-bottom: 160px;
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../images/bg/bg001.jpg');
+	background-size: cover;
+	background-attachment: fixed; /*依照視窗cover*/
+
+}
+
+.jumbotron .logo-image
+{
+	width: 320px;
+	height: 320px;
+	/*border: 1px solid #000;*/
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+.jumbotron .btn-group-center
+{
+	margin: 24px;
+}
+
+/* about-preview */
+.about-preview .title
+{
+	font-size: 32px;
+	color: #DDDDDD;
+	margin-bottom: 24px;
+	margin-top: 100px;
+}
+.about-preview .para
+{
+	font-size: 16px;
+	line-height: 32px;
+	color: #D9D9D9;
+	margin-bottom: 32px;
+	text-align: justify; /*文字排版切齊*/
+}
+
+.col-1-2 .about-preview .card
+{
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.section-intor
+{
+	text-align: center;
+	margin-bottom: 40px;
+}
+.section-intor .title
+{
+	font-size: 48px;
+	color: #333;
+	margin-top: 48px;
+	margin-bottom: 24px;
+}
+.section-intor .para
+{
+	font-size: 20px;
+	line-height: 32px;
+	color: #333;
+	margin-bottom: 24px;
+}
+
+/* services-item */
+.services-item .preview
+{
+	text-align: left;
+	padding-top: 16px;
+	margin-right: 16px;
+	margin-left: 16px;
+}
+.services-item .title
+{
+	font-size: 24px;
+	color: #333;
+	margin-bottom: 8px;
+
+	white-space: nowrap; /*文字不換行*/
+	overflow: hidden;    /*文字超出隱藏*/
+	text-overflow: ellipsis; /*文字超出顯示...*/
+}
+.services-item .subtitle
+{
+	font-size: 14px;
+	color: #d5a26f;
+	margin-bottom: 16px;
+
+	white-space: nowrap; /*文字不換行*/
+	overflow: hidden;    /*文字超出隱藏*/
+	text-overflow: ellipsis; /*文字超出顯示...*/
+}
+.services-item .para
+{
+	font-size: 16px;
+	color: #333;
+	line-height: 24px;
+	margin-bottom: 24px;
+	text-align: justify; /*文字對齊排版*/
+	height: 72px; /*設定文字範圍限高*/
+	overflow: hidden; /*文字超出顯示...*/
+}
+
+/* reservation */
+.reservation
+{
+	/*border: 1px solid #000;*/
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../images/bg/bg002.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+.reservation .section-intor .title,
+.reservation .section-intor .para
+{
+	color: #fff;
+}
+
+/* menu-list */
+.menu-list
+{
+	margin-bottom: 64px;
+}
+/*.menu-list:last-child  /*抓 menu-list 的最後一個做設定*/
+/*{
+	margin-bottom: 0;
+}*/
+.menu-list .title-bar
+{
+	/*border: 1px solid #000;*/
+	margin-bottom: 24px;
+
+}
+.menu-list .title-bar:after
+{
+	content: '';
+	display: block;
+	clear: both;
+}
+.menu-list .title-bar .title
+{
+	font-size: 24px;
+	line-height: 40px;
+	float: left;
+	/*border: 1px solid #000;*/
+	position: relative;
+	padding-left: 16px;
+	color: #d5a26f;
+}
+.menu-list .title-bar .title:before
+{
+	content: '';
+	display: inline-block;
+	width: 4px;
+	height: 24px;
+	background-color: #d5a26f;
+	position: absolute;
+	top: 50%;
+	transform: translate(-16px, -50%);
+
+}
+.menu-list .title-bar .btn
+{
+	float: right;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.menu-list .title-item .image-container:before
+{
+	padding-top: 100%;
+}
+.menu-list .preview .title
+{
+	font-size: 18px;
+	color: #333;
+	line-height: 24px;
+	margin-bottom: 8px;
+	margin-left: 16px;
+	margin-top: 16px;
+}
+.menu-list .preview .subtitle
+{
+	font-size: 14px;
+	color: #d5a26f;
+	margin-left: 16px;
+}
+
+/* contact-info */
+.contact-info
+{
+	padding-top: 60px;
+}
+.contact-info .info-item
+{
+	margin-bottom: 28px;
+}
+.contact-info .info-item .title
+{
+	font-size: 20px;
+	color: #d5a26f;
+	line-height: 36px;
+	margin-bottom: 16px;
+}
+.contact-info .info-item .title span
+{
+	border-bottom: 2px solid #d5a26f;
+	display: inline-block;
+}
+.contact-info .info-item .info
+{
+	font-size: 18px;
+	line-height: 32px;
+	color: #C1C1C1;
+
+	transition: all 0.3s;
+}
+.contact-info .info-item .info:hover
+{
+	font-size: 18px;
+	line-height: 32px;
+	color: #CF3E00;
+}
+/* contact */
+.contact .section-intor .title
+{
+	color: #fff;
+}
+.contact .section-intor .para
+{
+	color: #DDDDDD;
+}
+/* map-container */
+.map-container
+{
+	width: 100%;
+	/*border: 1px solid red;*/
+	position: relative;
+}
+.map-container:before
+{
+	content: '';
+	display: block;
+	width: 100%;
+	padding-top: 75%;
+}
+
+.map-container iframe
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+/* footer */
+.footer
+{
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../images/bg/bg003.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+.footer .brand
+{
+	display: block;
+	width: 240px;
+	height: 240px;
+	background-image: url('../images/common/logo-w.svg');
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
+	transition: all 0.3s;
+}
+.footer .brand:hover
+{
+	background-image: url('../images/common/logo-o.svg');
+}
+.footer .nav
+{
+	/*border: 1px solid #fff;*/
+	display: flex;
+	justify-content: center;
+}
+.footer .nav .nav-link
+{
+	/*border: 1px solid #fff;*/
+	color: #dddd;
+	display: block;
+	padding: 24px;
+	line-height: 24px;
+	font-size: 20px;
+
+	transition: all 0.3s;
+}
+.footer .nav .nav-link:hover
+{
+	font-size: 22px;
+	color: #CF3E00;
+}
+
+.footer .copyright
+{
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #ccc;
+	text-align: center;
+	line-height: 24px;
+	letter-spacing: 2px;
+	padding: 16px 0;
+	font-size: 14px;
+}
